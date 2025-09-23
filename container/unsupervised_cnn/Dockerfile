@@ -1,8 +1,51 @@
-FROM python:3.10-slim
+# File: container/unsupervised_cnn/Dockerfile
 
-RUN pip install --no-cache-dir pandas scikit-learn numpy
+FROM mambaorg/micromamba:1.5.6
+
+LABEL maintainer="nih-nlm"
+
+ENV MAMBA_ROOT_PREFIX=/opt/conda \
+    PATH=/opt/conda/bin:$PATH \
+    DEBIAN_FRONTEND=noninteractive
 
 WORKDIR /app
-COPY unsupervised_cnn.py .
 
-ENTRYPOINT ["python", "unsupervised_cnn.py"]
+# Install Conda environment
+COPY context/unsupervised_cnn.yml /tmp/env.yaml
+RUN micromamba install -y -n base -f /tmp/env.yaml && \
+    micromamba clean --all --yes
+
+USER root
+RUN apt-get update && \
+    apt-get install -y git procps && \
+    apt-get clean
+
+# Copy CLI code
+COPY context/src ./src
+COPY context/setup.py .
+
+# system toolchain for building wheels
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential gcc g++ gfortran \
+ && rm -rf /var/lib/apt/lists/*
+
+# modern build frontends help many packages
+RUN python -m pip install --no-cache-dir --upgrade pip setuptools wheel
+
+# now install your requirements
+COPY context/requirements-freeze.txt /app/requirements.txt
+RUN python -m pip install --no-cache-dir -r /app/requirements.txt
+
+# and force the Plotly you want (ensures from_matplotlib exists)
+RUN python -m pip install --no-cache-dir "plotly==5.22.0"
+
+# Install unsupervised_cnn-cli CLI tool
+RUN pip install /app/
+
+# Clone oadr-autoantibody repo and expose it to Python
+RUN git clone https://github.com/NIH-NLM/oadr-autoantibody.git /opt/oadr-autoantibody
+ENV PYTHONPATH="/opt/oadr-autoantibody/unsupervised_cnn"
+
+
+# Default: show CLI help
+CMD ["unsupervised_cnn-cli", "--help"]
