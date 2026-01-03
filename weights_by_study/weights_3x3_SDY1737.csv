@@ -1,0 +1,428 @@
+Study,Layer,Param,Index,Value
+SDY1737,layer_0,weight,"(0, 0, 0, 0)",0.22198501
+SDY1737,layer_0,weight,"(0, 0, 0, 1)",0.16231659
+SDY1737,layer_0,weight,"(0, 0, 0, 2)",0.09624222
+SDY1737,layer_0,weight,"(0, 0, 0, 3)",-0.114516556
+SDY1737,layer_0,weight,"(0, 0, 0, 4)",-0.06708379
+SDY1737,layer_0,weight,"(0, 0, 0, 5)",-0.14357342
+SDY1737,layer_0,weight,"(0, 0, 0, 6)",-0.013419483
+SDY1737,layer_0,weight,"(0, 0, 0, 7)",-0.08119783
+SDY1737,layer_0,weight,"(0, 1, 0, 0)",0.17501733
+SDY1737,layer_0,weight,"(0, 1, 0, 1)",-0.06373006
+SDY1737,layer_0,weight,"(0, 1, 0, 2)",-0.03101271
+SDY1737,layer_0,weight,"(0, 1, 0, 3)",0.14863084
+SDY1737,layer_0,weight,"(0, 1, 0, 4)",0.18356135
+SDY1737,layer_0,weight,"(0, 1, 0, 5)",-0.11688221
+SDY1737,layer_0,weight,"(0, 1, 0, 6)",0.062270757
+SDY1737,layer_0,weight,"(0, 1, 0, 7)",0.11864672
+SDY1737,layer_0,weight,"(0, 2, 0, 0)",0.21106131
+SDY1737,layer_0,weight,"(0, 2, 0, 1)",0.21363421
+SDY1737,layer_0,weight,"(0, 2, 0, 2)",0.15799318
+SDY1737,layer_0,weight,"(0, 2, 0, 3)",0.14575201
+SDY1737,layer_0,weight,"(0, 2, 0, 4)",-0.13614976
+SDY1737,layer_0,weight,"(0, 2, 0, 5)",-0.04705291
+SDY1737,layer_0,weight,"(0, 2, 0, 6)",0.21664482
+SDY1737,layer_0,weight,"(0, 2, 0, 7)",0.13532186
+SDY1737,layer_0,weight,"(1, 0, 0, 0)",0.022498319
+SDY1737,layer_0,weight,"(1, 0, 0, 1)",-0.16867067
+SDY1737,layer_0,weight,"(1, 0, 0, 2)",-0.064565375
+SDY1737,layer_0,weight,"(1, 0, 0, 3)",-0.09743783
+SDY1737,layer_0,weight,"(1, 0, 0, 4)",-0.06464866
+SDY1737,layer_0,weight,"(1, 0, 0, 5)",-0.030542208
+SDY1737,layer_0,weight,"(1, 0, 0, 6)",0.12018254
+SDY1737,layer_0,weight,"(1, 0, 0, 7)",0.005832405
+SDY1737,layer_0,weight,"(1, 1, 0, 0)",0.16177079
+SDY1737,layer_0,weight,"(1, 1, 0, 1)",0.042682335
+SDY1737,layer_0,weight,"(1, 1, 0, 2)",0.16130029
+SDY1737,layer_0,weight,"(1, 1, 0, 3)",-0.013180023
+SDY1737,layer_0,weight,"(1, 1, 0, 4)",-0.1565988
+SDY1737,layer_0,weight,"(1, 1, 0, 5)",-0.10987248
+SDY1737,layer_0,weight,"(1, 1, 0, 6)",-0.18457408
+SDY1737,layer_0,weight,"(1, 1, 0, 7)",0.090373464
+SDY1737,layer_0,weight,"(1, 2, 0, 0)",0.14139041
+SDY1737,layer_0,weight,"(1, 2, 0, 1)",0.12669617
+SDY1737,layer_0,weight,"(1, 2, 0, 2)",0.27336642
+SDY1737,layer_0,weight,"(1, 2, 0, 3)",0.21413267
+SDY1737,layer_0,weight,"(1, 2, 0, 4)",0.23839432
+SDY1737,layer_0,weight,"(1, 2, 0, 5)",-0.02770212
+SDY1737,layer_0,weight,"(1, 2, 0, 6)",-0.1423735
+SDY1737,layer_0,weight,"(1, 2, 0, 7)",0.11339232
+SDY1737,layer_0,weight,"(2, 0, 0, 0)",-0.23823807
+SDY1737,layer_0,weight,"(2, 0, 0, 1)",-0.07873831
+SDY1737,layer_0,weight,"(2, 0, 0, 2)",0.11135577
+SDY1737,layer_0,weight,"(2, 0, 0, 3)",0.03906042
+SDY1737,layer_0,weight,"(2, 0, 0, 4)",-0.23767208
+SDY1737,layer_0,weight,"(2, 0, 0, 5)",-0.22059767
+SDY1737,layer_0,weight,"(2, 0, 0, 6)",0.21458416
+SDY1737,layer_0,weight,"(2, 0, 0, 7)",-0.2022666
+SDY1737,layer_0,weight,"(2, 1, 0, 0)",-0.11661741
+SDY1737,layer_0,weight,"(2, 1, 0, 1)",-0.12692954
+SDY1737,layer_0,weight,"(2, 1, 0, 2)",-0.23225813
+SDY1737,layer_0,weight,"(2, 1, 0, 3)",-0.11227582
+SDY1737,layer_0,weight,"(2, 1, 0, 4)",0.15871584
+SDY1737,layer_0,weight,"(2, 1, 0, 5)",0.028759087
+SDY1737,layer_0,weight,"(2, 1, 0, 6)",0.22830012
+SDY1737,layer_0,weight,"(2, 1, 0, 7)",0.051592626
+SDY1737,layer_0,weight,"(2, 2, 0, 0)",-0.25496468
+SDY1737,layer_0,weight,"(2, 2, 0, 1)",0.017542932
+SDY1737,layer_0,weight,"(2, 2, 0, 2)",-0.13011922
+SDY1737,layer_0,weight,"(2, 2, 0, 3)",-0.11999268
+SDY1737,layer_0,weight,"(2, 2, 0, 4)",5.9403013e-05
+SDY1737,layer_0,weight,"(2, 2, 0, 5)",0.3100884
+SDY1737,layer_0,weight,"(2, 2, 0, 6)",-0.21079952
+SDY1737,layer_0,weight,"(2, 2, 0, 7)",0.24623857
+SDY1737,layer_0,bias,"(0,)",0.017333256
+SDY1737,layer_0,bias,"(1,)",-0.027132094
+SDY1737,layer_0,bias,"(2,)",0.015384453
+SDY1737,layer_0,bias,"(3,)",-0.0145666385
+SDY1737,layer_0,bias,"(4,)",0.029063012
+SDY1737,layer_0,bias,"(5,)",0.03073561
+SDY1737,layer_0,bias,"(6,)",0.0030006242
+SDY1737,layer_0,bias,"(7,)",-0.009678373
+SDY1737,layer_1,weight,"(0, 0)",0.14260466
+SDY1737,layer_1,weight,"(0, 1)",-0.100588
+SDY1737,layer_1,weight,"(0, 2)",0.17921112
+SDY1737,layer_1,weight,"(0, 3)",-0.07984946
+SDY1737,layer_1,weight,"(1, 0)",-0.058675602
+SDY1737,layer_1,weight,"(1, 1)",0.12771702
+SDY1737,layer_1,weight,"(1, 2)",0.2645382
+SDY1737,layer_1,weight,"(1, 3)",0.30030122
+SDY1737,layer_1,weight,"(2, 0)",0.1431575
+SDY1737,layer_1,weight,"(2, 1)",-0.09046179
+SDY1737,layer_1,weight,"(2, 2)",-0.16553843
+SDY1737,layer_1,weight,"(2, 3)",0.02660342
+SDY1737,layer_1,weight,"(3, 0)",-0.25626826
+SDY1737,layer_1,weight,"(3, 1)",-0.26602715
+SDY1737,layer_1,weight,"(3, 2)",0.18860897
+SDY1737,layer_1,weight,"(3, 3)",-0.050726503
+SDY1737,layer_1,weight,"(4, 0)",-0.22844464
+SDY1737,layer_1,weight,"(4, 1)",-0.28777087
+SDY1737,layer_1,weight,"(4, 2)",0.16090444
+SDY1737,layer_1,weight,"(4, 3)",-0.21331568
+SDY1737,layer_1,weight,"(5, 0)",0.19027807
+SDY1737,layer_1,weight,"(5, 1)",0.117371805
+SDY1737,layer_1,weight,"(5, 2)",-0.22147849
+SDY1737,layer_1,weight,"(5, 3)",0.12439778
+SDY1737,layer_1,weight,"(6, 0)",-0.038177982
+SDY1737,layer_1,weight,"(6, 1)",-0.1544872
+SDY1737,layer_1,weight,"(6, 2)",-0.010887653
+SDY1737,layer_1,weight,"(6, 3)",0.10460597
+SDY1737,layer_1,weight,"(7, 0)",-0.28838718
+SDY1737,layer_1,weight,"(7, 1)",0.09363672
+SDY1737,layer_1,weight,"(7, 2)",0.19082741
+SDY1737,layer_1,weight,"(7, 3)",-0.18882687
+SDY1737,layer_1,weight,"(8, 0)",-0.09759683
+SDY1737,layer_1,weight,"(8, 1)",0.06844795
+SDY1737,layer_1,weight,"(8, 2)",-0.18906622
+SDY1737,layer_1,weight,"(8, 3)",-0.10612754
+SDY1737,layer_1,weight,"(9, 0)",-0.2565316
+SDY1737,layer_1,weight,"(9, 1)",0.18978912
+SDY1737,layer_1,weight,"(9, 2)",0.12565418
+SDY1737,layer_1,weight,"(9, 3)",-0.08051766
+SDY1737,layer_1,weight,"(10, 0)",-0.22343807
+SDY1737,layer_1,weight,"(10, 1)",0.22730224
+SDY1737,layer_1,weight,"(10, 2)",0.1421446
+SDY1737,layer_1,weight,"(10, 3)",-0.2060272
+SDY1737,layer_1,weight,"(11, 0)",0.24673122
+SDY1737,layer_1,weight,"(11, 1)",0.26636496
+SDY1737,layer_1,weight,"(11, 2)",0.09151664
+SDY1737,layer_1,weight,"(11, 3)",-0.19673982
+SDY1737,layer_1,weight,"(12, 0)",-0.05116808
+SDY1737,layer_1,weight,"(12, 1)",-0.16438684
+SDY1737,layer_1,weight,"(12, 2)",-0.21235341
+SDY1737,layer_1,weight,"(12, 3)",-0.25607714
+SDY1737,layer_1,weight,"(13, 0)",-0.15655415
+SDY1737,layer_1,weight,"(13, 1)",0.01485414
+SDY1737,layer_1,weight,"(13, 2)",-0.18711469
+SDY1737,layer_1,weight,"(13, 3)",0.26826593
+SDY1737,layer_1,weight,"(14, 0)",-0.04201065
+SDY1737,layer_1,weight,"(14, 1)",-0.06866189
+SDY1737,layer_1,weight,"(14, 2)",0.0030960562
+SDY1737,layer_1,weight,"(14, 3)",0.21481901
+SDY1737,layer_1,weight,"(15, 0)",0.21190302
+SDY1737,layer_1,weight,"(15, 1)",0.09136565
+SDY1737,layer_1,weight,"(15, 2)",0.04066159
+SDY1737,layer_1,weight,"(15, 3)",0.23872164
+SDY1737,layer_1,weight,"(16, 0)",0.1727057
+SDY1737,layer_1,weight,"(16, 1)",-0.13323863
+SDY1737,layer_1,weight,"(16, 2)",-0.19745207
+SDY1737,layer_1,weight,"(16, 3)",0.0785683
+SDY1737,layer_1,weight,"(17, 0)",0.14781533
+SDY1737,layer_1,weight,"(17, 1)",0.18500923
+SDY1737,layer_1,weight,"(17, 2)",0.17741647
+SDY1737,layer_1,weight,"(17, 3)",0.23031184
+SDY1737,layer_1,weight,"(18, 0)",0.19467491
+SDY1737,layer_1,weight,"(18, 1)",0.14135912
+SDY1737,layer_1,weight,"(18, 2)",-0.228349
+SDY1737,layer_1,weight,"(18, 3)",0.07934296
+SDY1737,layer_1,weight,"(19, 0)",-0.1687051
+SDY1737,layer_1,weight,"(19, 1)",0.19404888
+SDY1737,layer_1,weight,"(19, 2)",-0.21149693
+SDY1737,layer_1,weight,"(19, 3)",-0.08653224
+SDY1737,layer_1,weight,"(20, 0)",0.11528142
+SDY1737,layer_1,weight,"(20, 1)",0.1882559
+SDY1737,layer_1,weight,"(20, 2)",0.15242933
+SDY1737,layer_1,weight,"(20, 3)",0.19121471
+SDY1737,layer_1,weight,"(21, 0)",0.034160048
+SDY1737,layer_1,weight,"(21, 1)",-0.13571262
+SDY1737,layer_1,weight,"(21, 2)",0.14998466
+SDY1737,layer_1,weight,"(21, 3)",-0.24994276
+SDY1737,layer_1,weight,"(22, 0)",0.028227177
+SDY1737,layer_1,weight,"(22, 1)",0.19341826
+SDY1737,layer_1,weight,"(22, 2)",0.1253083
+SDY1737,layer_1,weight,"(22, 3)",0.2529289
+SDY1737,layer_1,weight,"(23, 0)",-0.13620321
+SDY1737,layer_1,weight,"(23, 1)",0.04769621
+SDY1737,layer_1,weight,"(23, 2)",0.09996899
+SDY1737,layer_1,weight,"(23, 3)",-0.0826025
+SDY1737,layer_1,weight,"(24, 0)",0.20290825
+SDY1737,layer_1,weight,"(24, 1)",0.22841103
+SDY1737,layer_1,weight,"(24, 2)",-0.1967044
+SDY1737,layer_1,weight,"(24, 3)",0.021839015
+SDY1737,layer_1,weight,"(25, 0)",0.08281649
+SDY1737,layer_1,weight,"(25, 1)",0.16419454
+SDY1737,layer_1,weight,"(25, 2)",0.054520316
+SDY1737,layer_1,weight,"(25, 3)",-0.14087322
+SDY1737,layer_1,weight,"(26, 0)",-0.28551364
+SDY1737,layer_1,weight,"(26, 1)",-0.03939282
+SDY1737,layer_1,weight,"(26, 2)",0.10583962
+SDY1737,layer_1,weight,"(26, 3)",0.17805605
+SDY1737,layer_1,weight,"(27, 0)",-0.13323061
+SDY1737,layer_1,weight,"(27, 1)",-0.21365057
+SDY1737,layer_1,weight,"(27, 2)",0.014199909
+SDY1737,layer_1,weight,"(27, 3)",0.3362708
+SDY1737,layer_1,weight,"(28, 0)",-0.051788744
+SDY1737,layer_1,weight,"(28, 1)",-0.056132987
+SDY1737,layer_1,weight,"(28, 2)",0.029540801
+SDY1737,layer_1,weight,"(28, 3)",0.19205448
+SDY1737,layer_1,weight,"(29, 0)",0.022976892
+SDY1737,layer_1,weight,"(29, 1)",0.2536016
+SDY1737,layer_1,weight,"(29, 2)",-0.053873435
+SDY1737,layer_1,weight,"(29, 3)",0.16462067
+SDY1737,layer_1,weight,"(30, 0)",0.1580862
+SDY1737,layer_1,weight,"(30, 1)",-0.28842095
+SDY1737,layer_1,weight,"(30, 2)",-0.06763654
+SDY1737,layer_1,weight,"(30, 3)",0.062833145
+SDY1737,layer_1,weight,"(31, 0)",0.020320544
+SDY1737,layer_1,weight,"(31, 1)",-0.11645759
+SDY1737,layer_1,weight,"(31, 2)",-0.25862807
+SDY1737,layer_1,weight,"(31, 3)",-0.22738479
+SDY1737,layer_1,weight,"(32, 0)",-0.0056221276
+SDY1737,layer_1,weight,"(32, 1)",-0.12699495
+SDY1737,layer_1,weight,"(32, 2)",0.12542193
+SDY1737,layer_1,weight,"(32, 3)",0.06781774
+SDY1737,layer_1,weight,"(33, 0)",0.17311649
+SDY1737,layer_1,weight,"(33, 1)",0.16263531
+SDY1737,layer_1,weight,"(33, 2)",-0.0039329515
+SDY1737,layer_1,weight,"(33, 3)",0.08368245
+SDY1737,layer_1,weight,"(34, 0)",-0.08226751
+SDY1737,layer_1,weight,"(34, 1)",-0.048817944
+SDY1737,layer_1,weight,"(34, 2)",0.11878056
+SDY1737,layer_1,weight,"(34, 3)",0.30332574
+SDY1737,layer_1,weight,"(35, 0)",0.15981226
+SDY1737,layer_1,weight,"(35, 1)",0.23074938
+SDY1737,layer_1,weight,"(35, 2)",0.0906841
+SDY1737,layer_1,weight,"(35, 3)",-0.101347715
+SDY1737,layer_1,weight,"(36, 0)",-0.16846754
+SDY1737,layer_1,weight,"(36, 1)",-0.2655699
+SDY1737,layer_1,weight,"(36, 2)",-0.0393288
+SDY1737,layer_1,weight,"(36, 3)",0.22263536
+SDY1737,layer_1,weight,"(37, 0)",-0.24563116
+SDY1737,layer_1,weight,"(37, 1)",0.14052618
+SDY1737,layer_1,weight,"(37, 2)",0.019729866
+SDY1737,layer_1,weight,"(37, 3)",0.081731774
+SDY1737,layer_1,weight,"(38, 0)",0.17427838
+SDY1737,layer_1,weight,"(38, 1)",0.054895416
+SDY1737,layer_1,weight,"(38, 2)",-0.03295322
+SDY1737,layer_1,weight,"(38, 3)",-0.15873288
+SDY1737,layer_1,weight,"(39, 0)",0.20597637
+SDY1737,layer_1,weight,"(39, 1)",0.20515685
+SDY1737,layer_1,weight,"(39, 2)",0.16411236
+SDY1737,layer_1,weight,"(39, 3)",0.21407409
+SDY1737,layer_1,weight,"(40, 0)",-0.18812568
+SDY1737,layer_1,weight,"(40, 1)",0.20245759
+SDY1737,layer_1,weight,"(40, 2)",0.036755424
+SDY1737,layer_1,weight,"(40, 3)",0.11743882
+SDY1737,layer_1,weight,"(41, 0)",-0.025359517
+SDY1737,layer_1,weight,"(41, 1)",-0.1918087
+SDY1737,layer_1,weight,"(41, 2)",0.14716849
+SDY1737,layer_1,weight,"(41, 3)",0.10996123
+SDY1737,layer_1,weight,"(42, 0)",0.009140095
+SDY1737,layer_1,weight,"(42, 1)",0.14019668
+SDY1737,layer_1,weight,"(42, 2)",-0.074864894
+SDY1737,layer_1,weight,"(42, 3)",0.25671676
+SDY1737,layer_1,weight,"(43, 0)",0.2580323
+SDY1737,layer_1,weight,"(43, 1)",0.19030626
+SDY1737,layer_1,weight,"(43, 2)",0.060747873
+SDY1737,layer_1,weight,"(43, 3)",-0.24836501
+SDY1737,layer_1,weight,"(44, 0)",-0.11655374
+SDY1737,layer_1,weight,"(44, 1)",-0.065450504
+SDY1737,layer_1,weight,"(44, 2)",0.1569374
+SDY1737,layer_1,weight,"(44, 3)",-0.18051068
+SDY1737,layer_1,weight,"(45, 0)",-0.23006654
+SDY1737,layer_1,weight,"(45, 1)",0.1475153
+SDY1737,layer_1,weight,"(45, 2)",0.03530988
+SDY1737,layer_1,weight,"(45, 3)",0.23245962
+SDY1737,layer_1,weight,"(46, 0)",-0.27054232
+SDY1737,layer_1,weight,"(46, 1)",-0.11584504
+SDY1737,layer_1,weight,"(46, 2)",0.25174707
+SDY1737,layer_1,weight,"(46, 3)",-0.2414849
+SDY1737,layer_1,weight,"(47, 0)",0.2057347
+SDY1737,layer_1,weight,"(47, 1)",-0.24683166
+SDY1737,layer_1,weight,"(47, 2)",-0.09891398
+SDY1737,layer_1,weight,"(47, 3)",0.31817284
+SDY1737,layer_1,weight,"(48, 0)",-0.20185271
+SDY1737,layer_1,weight,"(48, 1)",-0.03984598
+SDY1737,layer_1,weight,"(48, 2)",-0.08851484
+SDY1737,layer_1,weight,"(48, 3)",0.11805557
+SDY1737,layer_1,weight,"(49, 0)",-0.24744831
+SDY1737,layer_1,weight,"(49, 1)",0.11355581
+SDY1737,layer_1,weight,"(49, 2)",-0.10480779
+SDY1737,layer_1,weight,"(49, 3)",0.18053198
+SDY1737,layer_1,weight,"(50, 0)",0.011561301
+SDY1737,layer_1,weight,"(50, 1)",0.2890143
+SDY1737,layer_1,weight,"(50, 2)",0.23516424
+SDY1737,layer_1,weight,"(50, 3)",-0.05000212
+SDY1737,layer_1,weight,"(51, 0)",0.23153052
+SDY1737,layer_1,weight,"(51, 1)",-0.06228858
+SDY1737,layer_1,weight,"(51, 2)",-0.16188507
+SDY1737,layer_1,weight,"(51, 3)",-0.09143156
+SDY1737,layer_1,weight,"(52, 0)",1.9789727e-06
+SDY1737,layer_1,weight,"(52, 1)",0.18756202
+SDY1737,layer_1,weight,"(52, 2)",0.19484568
+SDY1737,layer_1,weight,"(52, 3)",-0.12055652
+SDY1737,layer_1,weight,"(53, 0)",0.011040212
+SDY1737,layer_1,weight,"(53, 1)",0.22895947
+SDY1737,layer_1,weight,"(53, 2)",0.110796936
+SDY1737,layer_1,weight,"(53, 3)",0.23550479
+SDY1737,layer_1,weight,"(54, 0)",0.069425285
+SDY1737,layer_1,weight,"(54, 1)",0.051059578
+SDY1737,layer_1,weight,"(54, 2)",0.26955557
+SDY1737,layer_1,weight,"(54, 3)",0.19005615
+SDY1737,layer_1,weight,"(55, 0)",0.10146271
+SDY1737,layer_1,weight,"(55, 1)",0.15539649
+SDY1737,layer_1,weight,"(55, 2)",-0.17889363
+SDY1737,layer_1,weight,"(55, 3)",-0.21720187
+SDY1737,layer_1,weight,"(56, 0)",-0.12161302
+SDY1737,layer_1,weight,"(56, 1)",-0.2066233
+SDY1737,layer_1,weight,"(56, 2)",-0.19373554
+SDY1737,layer_1,weight,"(56, 3)",0.05517661
+SDY1737,layer_1,weight,"(57, 0)",-0.13440177
+SDY1737,layer_1,weight,"(57, 1)",0.14723253
+SDY1737,layer_1,weight,"(57, 2)",0.14464591
+SDY1737,layer_1,weight,"(57, 3)",-0.09598084
+SDY1737,layer_1,weight,"(58, 0)",-0.09788773
+SDY1737,layer_1,weight,"(58, 1)",-0.025861228
+SDY1737,layer_1,weight,"(58, 2)",-0.08540312
+SDY1737,layer_1,weight,"(58, 3)",0.23147145
+SDY1737,layer_1,weight,"(59, 0)",-0.14757468
+SDY1737,layer_1,weight,"(59, 1)",0.12634887
+SDY1737,layer_1,weight,"(59, 2)",0.024448974
+SDY1737,layer_1,weight,"(59, 3)",-0.16617487
+SDY1737,layer_1,weight,"(60, 0)",-0.26108867
+SDY1737,layer_1,weight,"(60, 1)",-0.15604673
+SDY1737,layer_1,weight,"(60, 2)",0.07838235
+SDY1737,layer_1,weight,"(60, 3)",-0.14966117
+SDY1737,layer_1,weight,"(61, 0)",-0.026770158
+SDY1737,layer_1,weight,"(61, 1)",-0.12688152
+SDY1737,layer_1,weight,"(61, 2)",-0.21688004
+SDY1737,layer_1,weight,"(61, 3)",0.052436907
+SDY1737,layer_1,weight,"(62, 0)",0.17295098
+SDY1737,layer_1,weight,"(62, 1)",-0.16195449
+SDY1737,layer_1,weight,"(62, 2)",-0.04157003
+SDY1737,layer_1,weight,"(62, 3)",0.09703522
+SDY1737,layer_1,weight,"(63, 0)",0.1675295
+SDY1737,layer_1,weight,"(63, 1)",-0.18446742
+SDY1737,layer_1,weight,"(63, 2)",0.0031233814
+SDY1737,layer_1,weight,"(63, 3)",0.2944599
+SDY1737,layer_1,weight,"(64, 0)",-0.28948277
+SDY1737,layer_1,weight,"(64, 1)",0.0578875
+SDY1737,layer_1,weight,"(64, 2)",-0.048870597
+SDY1737,layer_1,weight,"(64, 3)",-0.12490198
+SDY1737,layer_1,weight,"(65, 0)",0.23074256
+SDY1737,layer_1,weight,"(65, 1)",-0.072825655
+SDY1737,layer_1,weight,"(65, 2)",0.043704312
+SDY1737,layer_1,weight,"(65, 3)",-0.05927102
+SDY1737,layer_1,weight,"(66, 0)",0.18291329
+SDY1737,layer_1,weight,"(66, 1)",-0.19138253
+SDY1737,layer_1,weight,"(66, 2)",0.26202425
+SDY1737,layer_1,weight,"(66, 3)",-0.014185596
+SDY1737,layer_1,weight,"(67, 0)",0.13818336
+SDY1737,layer_1,weight,"(67, 1)",0.018662646
+SDY1737,layer_1,weight,"(67, 2)",0.14468412
+SDY1737,layer_1,weight,"(67, 3)",0.14788593
+SDY1737,layer_1,weight,"(68, 0)",0.018011393
+SDY1737,layer_1,weight,"(68, 1)",-0.21012801
+SDY1737,layer_1,weight,"(68, 2)",0.16016904
+SDY1737,layer_1,weight,"(68, 3)",0.24583392
+SDY1737,layer_1,weight,"(69, 0)",-0.0024053764
+SDY1737,layer_1,weight,"(69, 1)",0.099561214
+SDY1737,layer_1,weight,"(69, 2)",-0.12519538
+SDY1737,layer_1,weight,"(69, 3)",0.22973612
+SDY1737,layer_1,weight,"(70, 0)",0.17585668
+SDY1737,layer_1,weight,"(70, 1)",-0.1416824
+SDY1737,layer_1,weight,"(70, 2)",-0.25095624
+SDY1737,layer_1,weight,"(70, 3)",-0.09477433
+SDY1737,layer_1,weight,"(71, 0)",-0.13879925
+SDY1737,layer_1,weight,"(71, 1)",-0.084346056
+SDY1737,layer_1,weight,"(71, 2)",-0.17210029
+SDY1737,layer_1,weight,"(71, 3)",-0.05903958
+SDY1737,layer_1,bias,"(0,)",-0.023200069
+SDY1737,layer_1,bias,"(1,)",-0.025426198
+SDY1737,layer_1,bias,"(2,)",-0.014153679
+SDY1737,layer_1,bias,"(3,)",0.005789666
+SDY1737,layer_2,weight,"(0, 0)",0.038889114
+SDY1737,layer_2,weight,"(0, 1)",0.03991328
+SDY1737,layer_2,weight,"(0, 2)",0.34918964
+SDY1737,layer_2,weight,"(0, 3)",0.38497013
+SDY1737,layer_2,weight,"(0, 4)",0.31416458
+SDY1737,layer_2,weight,"(0, 5)",0.5348789
+SDY1737,layer_2,weight,"(0, 6)",0.5627649
+SDY1737,layer_2,weight,"(0, 7)",0.11610761
+SDY1737,layer_2,weight,"(0, 8)",-0.6561602
+SDY1737,layer_2,weight,"(1, 0)",0.6195142
+SDY1737,layer_2,weight,"(1, 1)",0.015804645
+SDY1737,layer_2,weight,"(1, 2)",0.0024795884
+SDY1737,layer_2,weight,"(1, 3)",-0.5785178
+SDY1737,layer_2,weight,"(1, 4)",0.10158605
+SDY1737,layer_2,weight,"(1, 5)",0.25379336
+SDY1737,layer_2,weight,"(1, 6)",-0.043603376
+SDY1737,layer_2,weight,"(1, 7)",-0.39318702
+SDY1737,layer_2,weight,"(1, 8)",-0.5211389
+SDY1737,layer_2,weight,"(2, 0)",0.02406684
+SDY1737,layer_2,weight,"(2, 1)",-0.37811446
+SDY1737,layer_2,weight,"(2, 2)",0.24025564
+SDY1737,layer_2,weight,"(2, 3)",0.24733645
+SDY1737,layer_2,weight,"(2, 4)",-0.10074083
+SDY1737,layer_2,weight,"(2, 5)",0.34795755
+SDY1737,layer_2,weight,"(2, 6)",0.2506032
+SDY1737,layer_2,weight,"(2, 7)",0.42399508
+SDY1737,layer_2,weight,"(2, 8)",-0.5384069
+SDY1737,layer_2,weight,"(3, 0)",-0.4428687
+SDY1737,layer_2,weight,"(3, 1)",0.036988426
+SDY1737,layer_2,weight,"(3, 2)",-0.08853588
+SDY1737,layer_2,weight,"(3, 3)",0.15260613
+SDY1737,layer_2,weight,"(3, 4)",-0.38419688
+SDY1737,layer_2,weight,"(3, 5)",0.07941215
+SDY1737,layer_2,weight,"(3, 6)",-0.08990751
+SDY1737,layer_2,weight,"(3, 7)",0.37693685
+SDY1737,layer_2,weight,"(3, 8)",0.4916669
+SDY1737,layer_2,bias,"(0,)",-0.02032428
+SDY1737,layer_2,bias,"(1,)",-0.025267527
+SDY1737,layer_2,bias,"(2,)",-0.02796246
+SDY1737,layer_2,bias,"(3,)",0.03431062
+SDY1737,layer_2,bias,"(4,)",-0.0012735747
+SDY1737,layer_2,bias,"(5,)",-0.05151953
+SDY1737,layer_2,bias,"(6,)",-0.03359218
+SDY1737,layer_2,bias,"(7,)",-0.020867702
+SDY1737,layer_2,bias,"(8,)",0.0058731977
+SDY1737,layer_3,weight,"(0, 0, 0, 0)",-0.2745872
+SDY1737,layer_3,weight,"(0, 1, 0, 0)",-0.49273333
+SDY1737,layer_3,weight,"(0, 2, 0, 0)",-0.3986444
+SDY1737,layer_3,weight,"(1, 0, 0, 0)",-0.062704265
+SDY1737,layer_3,weight,"(1, 1, 0, 0)",-0.4693368
+SDY1737,layer_3,weight,"(1, 2, 0, 0)",-0.32011652
+SDY1737,layer_3,weight,"(2, 0, 0, 0)",0.6161977
+SDY1737,layer_3,weight,"(2, 1, 0, 0)",0.36670032
+SDY1737,layer_3,weight,"(2, 2, 0, 0)",0.5043772
+SDY1737,layer_3,bias,"(0,)",0.08917857
