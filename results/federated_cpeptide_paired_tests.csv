@@ -1,0 +1,2 @@
+model_A,model_B,MSE_A_mean,MSE_B_mean,delta_MSE_A_minus_B,wilcoxon_W_two_sided,p_two_sided,p_one_sided_OLS_greater,cohens_d_A_minus_B
+OLS_pooled,FedAE+Head,0.22393625272489323,0.3288737685938604,-0.10493751586896718,2.0,0.1875,0.9375,-0.7887227554689321
