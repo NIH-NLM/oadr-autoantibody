@@ -1,0 +1,26 @@
+feature,selection_freq_panelB
+Sex,0.825
+age_years,0.055
+disease_duration_years,0.295
+bmi,0.445
+height_cm,0.3
+weight_kg,0.89
+GAD65,0.285
+IA2IC,0.485
+MIAA,0.07
+ZNT8,0.27
+ICA,0.0
+bmi_missing,0.0
+race_Asian,0.0
+race_Black or African American,0.105
+race_Other,0.0
+race_White,0.29
+ethnicity_Not Hispanic or Latino,0.17
+ethnicity_Unknown,0.01
+cohort_group_2,0.43
+cohort_group_Adult,0.405
+cohort_group_Control,0.64
+cohort_group_Pediatric,0.725
+cohort_group_hOKT3,0.32
+Study_SDY524,0.28
+Study_SDY569,0.2
