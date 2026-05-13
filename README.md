@@ -1,10 +1,9 @@
 # Predicting residual beta-cell function in Type 1 Diabetes, under federation
 
-This repository contains the analytical work behind a BioITWorld talk on
-**federated prediction of pancreatic beta-cell function** from autoantibody
+This repository contains the analytical work for the **federated prediction of pancreatic beta-cell function** from autoantibody
 profiles, across four independent clinical study cohorts (SDY524, SDY569,
 SDY797, SDY1737) plus a fifth (SDY1625) used only for the unsupervised
-reconstruction comparison.
+reconstruction.
 
 ## The biological premise
 
@@ -32,25 +31,20 @@ scientific question is therefore: **how well does the autoantibody profile
 predict the beta-cell function that survives that attack?** That is what every
 model in this repository is trying to answer.
 
-## The methodological challenge: studies cannot be pooled
+## Privacy-preserving Federation
 
 Each cohort comes from a different institutional clinical study with its own
 data-use governance. In a real deployment those data sets cannot be moved
 between institutions: privacy regulations, IRB constraints, and institutional
-policies forbid it. The methodological question is therefore not *"what is the
-best model when we put all the data in one place?"* but **"what is the best
-model when each institution trains on its own subjects and only model
-parameters are exchanged with a central coordinator?"** That is federated
-learning, and it is the only framing under which the work could be deployed
-in practice.
+policies forbid it.  To enable increasing cohort size, which allows one then to
+gain statistical power can be achieved with federated learning.
 
-The four institutions cannot agree to centralise their data, but they can
+In this simulation, the four institutions cannot agree to centralise their data, but they can
 agree to share **only** model parameters after each one has trained on its
 own subjects, and to accept a central coordinator that aggregates those
 parameters by taking the median value across institutions for each parameter.
-This is the protocol used everywhere in this repository.
 
-## The three arguments the talk makes
+## What Federation Provides
 
 1. **Federation across more institutions improves prediction.** Adding more
    participating studies to the federation lowers the prediction error of
@@ -67,10 +61,9 @@ This is the protocol used everywhere in this repository.
    figure.
 
 3. **Federation lifts the cohort-size ceiling on what effects can be
-   detected at all.** The most fundamental statistical message: at a fixed
-   biological effect size, the probability of detecting that effect grows
-   rapidly with cohort size. A single institution alone (the smallest is
-   SDY569 with N = 10 subjects) cannot even fit a 9-feature regression. The
+   detected.** At a fixed biological effect size, the probability of detecting that effect grows
+   with cohort size. A single institution alone (the smallest is
+   SDY569 with N = 10 subjects) cannot fit a 9-feature regression. The
    minimum detectable effect size shrinks from R² ≥ 0.91 at N = 10 (only
    near-deterministic effects detectable) to R² ≥ 0.10 at N = 150 (a
    biologically plausible effect size that single-institution studies would
@@ -91,13 +84,11 @@ protocol:
 | Convolutional network with autoencoder pretraining | Non-linear, two-stage training: unsupervised feature learning then a small supervised head | no (latent layers) |
 
 ¹ **Lasso** is an acronym for *Least Absolute Shrinkage and Selection
-Operator*. It is ordinary linear regression with an additional penalty on
-the absolute value of the coefficients, which has the side-effect of
-pushing weak features to exactly zero. Features that end up non-zero are
-the ones the data identifies as useful predictors, which makes lasso
-doubly informative: it predicts *and* it selects features for you.
+Operator*. It is linear regression using the absolute value of coefficients.
+Features that end up non-zero are the ones the data identifies as useful predictors, which makes lasso
+doubly informative: predicting *and* selecting features.
 
-² **Random Forest** is most commonly associated with classification tasks,
+² **Random Forest** is most commonly used for classification tasks,
 where a forest of decision trees votes on the class label. To extract a
 formal p-value from a Random Forest typically requires permuting the
 labels and re-fitting the forest hundreds or thousands of times. **In this
@@ -130,9 +121,9 @@ produces a small number of clean findings:
    number is 0.41. Naive median aggregation of the weights of
    independently-trained neural networks across institutions degrades the
    model because the per-institution networks settle into incompatible
-   parameterisations. This is a key finding of the talk.
-3. **The autoencoder pretraining is what makes neural-network federation
-   work at all.** With an autoencoder learned per institution and
+   parameterisations.
+3. **The autoencoder pretraining enables neural-network federation
+   work.** With an autoencoder learned per institution and
    federated *before* the supervised head is trained, the predictive head
    inherits a stable representation that all institutions share. The
    resulting federated model holds at ~0.31 across cohort sizes and
@@ -154,11 +145,12 @@ produces a small number of clean findings:
    biologically plausible effects that the federation can decisively
    detect.
 
-The fundamental message of the talk is the combination of arguments 1, 3,
-and 5: **federation lifts the cohort-size ceiling on what we can learn
-about residual β-cell function from autoantibody profiles, and it does so
-without any institution acquiring more subjects or sharing any subject
-data.** The interpretable models (linear, lasso, Random Forest) all
+## Conclusions
+
+**Federation increases the cohort-size in a privacy preserving manner**
+When we federate, we increase cohort size enabling smaller institutions to benefit.
+This is done without any institution acquiring more subjects or sharing any subject
+data. The interpretable models (linear, lasso, Random Forest) all
 benefit substantially; the deep models benefit only when an autoencoder
 provides a shared representation across institutions; iteration buys
 further accuracy until a plateau is reached.
@@ -188,14 +180,6 @@ Older exploration that is not on the talk's critical path lives under
 as both PDF (vector, for archival) and PNG at 220 dots per inch (for direct
 import into a presentation deck).
 
-**On retention.** Some of what is currently under `archive/` could be
-removed from the working tree with `git rm` instead; the files would still
-be recoverable from git history. The decision is purely aesthetic. The
-`archive/` directory keeps historical context visible in the repository,
-which is useful for an academic audit trail; using `git rm` keeps the
-working tree minimal at the cost of requiring git-log spelunking to find
-deleted files. Either is fine.
-
 ## Running the notebooks
 
 Tested kernel: `~/miniforge3/envs/springer-verlag/bin/python` (TensorFlow
@@ -212,16 +196,6 @@ if they are present, so reading the results / re-rendering the figures
 takes seconds. Delete the corresponding files in `results/` to force a
 re-run.
 
-## Next step
-
-The federated comparison in this repository is implemented in plain Python
-inside Jupyter, so the protocol is fully visible. The next deliverable is to
-port the same per-institution local training plus median aggregation plus
-multi-round iteration into a Nextflow workflow that runs on an actual
-federated platform across the four institutions. The notebook code is meant
-to map directly onto that workflow: each per-institution training step
-becomes a Nextflow process; the aggregation step becomes a single coordinator
-process; the round loop becomes Nextflow's iteration construct.
 
 ## License
 
