@@ -1,172 +1,172 @@
 Study,Layer,Param,Index,Value
-SDY569,layer_0,weight,"(0, 0, 0, 0)",-0.46783674
-SDY569,layer_0,weight,"(0, 0, 0, 1)",0.23204985
-SDY569,layer_0,weight,"(0, 0, 0, 2)",-0.5769005
-SDY569,layer_0,weight,"(0, 0, 0, 3)",-0.47616604
-SDY569,layer_0,weight,"(1, 0, 0, 0)",-0.5181542
-SDY569,layer_0,weight,"(1, 0, 0, 1)",-0.6358961
-SDY569,layer_0,weight,"(1, 0, 0, 2)",0.49970618
-SDY569,layer_0,weight,"(1, 0, 0, 3)",0.16957559
-SDY569,layer_0,weight,"(2, 0, 0, 0)",-0.5229058
-SDY569,layer_0,weight,"(2, 0, 0, 1)",0.10488073
-SDY569,layer_0,weight,"(2, 0, 0, 2)",-0.09043021
-SDY569,layer_0,weight,"(2, 0, 0, 3)",-0.60079706
-SDY569,layer_0,bias,"(0,)",0.0
-SDY569,layer_0,bias,"(1,)",0.038407072
-SDY569,layer_0,bias,"(2,)",-0.035131577
-SDY569,layer_0,bias,"(3,)",-0.03949155
-SDY569,layer_1,weight,"(0, 0)",-0.038528174
-SDY569,layer_1,weight,"(0, 1)",-0.009397209
-SDY569,layer_1,weight,"(1, 0)",-0.19200243
-SDY569,layer_1,weight,"(1, 1)",-0.4742625
-SDY569,layer_1,weight,"(2, 0)",0.25806195
-SDY569,layer_1,weight,"(2, 1)",0.3483301
-SDY569,layer_1,weight,"(3, 0)",0.33875567
-SDY569,layer_1,weight,"(3, 1)",0.2657567
-SDY569,layer_1,weight,"(4, 0)",0.015883774
-SDY569,layer_1,weight,"(4, 1)",0.004171759
-SDY569,layer_1,weight,"(5, 0)",-0.07934024
-SDY569,layer_1,weight,"(5, 1)",-0.15089335
-SDY569,layer_1,weight,"(6, 0)",0.25600794
-SDY569,layer_1,weight,"(6, 1)",0.40536353
-SDY569,layer_1,weight,"(7, 0)",0.32702792
-SDY569,layer_1,weight,"(7, 1)",0.36470282
-SDY569,layer_1,weight,"(8, 0)",-0.10885769
-SDY569,layer_1,weight,"(8, 1)",-0.4043472
-SDY569,layer_1,weight,"(9, 0)",-0.38179347
-SDY569,layer_1,weight,"(9, 1)",0.36798784
-SDY569,layer_1,weight,"(10, 0)",-0.027915096
-SDY569,layer_1,weight,"(10, 1)",-0.21393038
-SDY569,layer_1,weight,"(11, 0)",0.35594288
-SDY569,layer_1,weight,"(11, 1)",-0.06830506
-SDY569,layer_1,weight,"(12, 0)",-0.18948007
-SDY569,layer_1,weight,"(12, 1)",0.121717274
-SDY569,layer_1,weight,"(13, 0)",-0.25599468
-SDY569,layer_1,weight,"(13, 1)",-0.08914775
-SDY569,layer_1,weight,"(14, 0)",0.2080257
-SDY569,layer_1,weight,"(14, 1)",-0.35441497
-SDY569,layer_1,weight,"(15, 0)",-0.10479137
-SDY569,layer_1,weight,"(15, 1)",-0.36297613
-SDY569,layer_1,weight,"(16, 0)",0.18393266
-SDY569,layer_1,weight,"(16, 1)",0.23553193
-SDY569,layer_1,weight,"(17, 0)",-0.47714663
-SDY569,layer_1,weight,"(17, 1)",-0.33752152
-SDY569,layer_1,weight,"(18, 0)",-0.1298478
-SDY569,layer_1,weight,"(18, 1)",-0.3144961
-SDY569,layer_1,weight,"(19, 0)",-0.36396804
-SDY569,layer_1,weight,"(19, 1)",-0.37329692
-SDY569,layer_1,weight,"(20, 0)",0.1006822
-SDY569,layer_1,weight,"(20, 1)",0.244349
-SDY569,layer_1,weight,"(21, 0)",-0.40758577
-SDY569,layer_1,weight,"(21, 1)",-0.45512134
-SDY569,layer_1,weight,"(22, 0)",-0.05638525
-SDY569,layer_1,weight,"(22, 1)",-0.36002883
-SDY569,layer_1,weight,"(23, 0)",-0.20019248
-SDY569,layer_1,weight,"(23, 1)",0.28822076
-SDY569,layer_1,weight,"(24, 0)",0.24883491
-SDY569,layer_1,weight,"(24, 1)",0.16239429
-SDY569,layer_1,weight,"(25, 0)",0.1863132
-SDY569,layer_1,weight,"(25, 1)",0.2135375
-SDY569,layer_1,weight,"(26, 0)",-0.44047132
-SDY569,layer_1,weight,"(26, 1)",-0.20766512
-SDY569,layer_1,weight,"(27, 0)",0.09198457
-SDY569,layer_1,weight,"(27, 1)",0.15483278
-SDY569,layer_1,bias,"(0,)",-0.035305332
-SDY569,layer_1,bias,"(1,)",-0.037683748
-SDY569,layer_2,weight,"(0, 0)",0.036901794
-SDY569,layer_2,weight,"(0, 1)",0.2751092
-SDY569,layer_2,weight,"(0, 2)",-0.0963333
-SDY569,layer_2,weight,"(0, 3)",0.19851935
-SDY569,layer_2,weight,"(0, 4)",0.3249456
-SDY569,layer_2,weight,"(0, 5)",-0.22468817
-SDY569,layer_2,weight,"(0, 6)",0.20976587
-SDY569,layer_2,weight,"(0, 7)",-0.038958978
-SDY569,layer_2,weight,"(0, 8)",-0.08264972
-SDY569,layer_2,weight,"(0, 9)",-0.17470795
-SDY569,layer_2,weight,"(0, 10)",-0.3394975
-SDY569,layer_2,weight,"(0, 11)",0.2511779
-SDY569,layer_2,weight,"(0, 12)",-0.35624814
-SDY569,layer_2,weight,"(0, 13)",-0.4121172
-SDY569,layer_2,weight,"(0, 14)",0.34704608
-SDY569,layer_2,weight,"(0, 15)",0.36578304
-SDY569,layer_2,weight,"(0, 16)",-0.182351
-SDY569,layer_2,weight,"(0, 17)",0.30675074
-SDY569,layer_2,weight,"(0, 18)",-0.16751589
-SDY569,layer_2,weight,"(0, 19)",0.30721262
-SDY569,layer_2,weight,"(0, 20)",-0.38733974
-SDY569,layer_2,weight,"(0, 21)",0.2886139
-SDY569,layer_2,weight,"(0, 22)",0.15403798
-SDY569,layer_2,weight,"(0, 23)",0.07862157
-SDY569,layer_2,weight,"(0, 24)",0.019028971
-SDY569,layer_2,weight,"(0, 25)",-0.16406262
-SDY569,layer_2,weight,"(0, 26)",0.10994315
-SDY569,layer_2,weight,"(0, 27)",-0.13510662
-SDY569,layer_2,weight,"(1, 0)",0.374904
-SDY569,layer_2,weight,"(1, 1)",0.14561369
-SDY569,layer_2,weight,"(1, 2)",0.19605069
-SDY569,layer_2,weight,"(1, 3)",-0.3271836
-SDY569,layer_2,weight,"(1, 4)",0.085332125
-SDY569,layer_2,weight,"(1, 5)",-0.39388174
-SDY569,layer_2,weight,"(1, 6)",0.24018227
-SDY569,layer_2,weight,"(1, 7)",0.28058136
-SDY569,layer_2,weight,"(1, 8)",0.17381474
-SDY569,layer_2,weight,"(1, 9)",-0.15012643
-SDY569,layer_2,weight,"(1, 10)",-0.27410626
-SDY569,layer_2,weight,"(1, 11)",0.2835371
-SDY569,layer_2,weight,"(1, 12)",-0.39483017
-SDY569,layer_2,weight,"(1, 13)",-0.01694128
-SDY569,layer_2,weight,"(1, 14)",-0.41422582
-SDY569,layer_2,weight,"(1, 15)",-0.06993133
-SDY569,layer_2,weight,"(1, 16)",0.16944842
-SDY569,layer_2,weight,"(1, 17)",-0.085555725
-SDY569,layer_2,weight,"(1, 18)",0.14144461
-SDY569,layer_2,weight,"(1, 19)",-0.14241044
-SDY569,layer_2,weight,"(1, 20)",0.14006793
-SDY569,layer_2,weight,"(1, 21)",0.06681442
-SDY569,layer_2,weight,"(1, 22)",-0.09805866
-SDY569,layer_2,weight,"(1, 23)",-0.21939643
-SDY569,layer_2,weight,"(1, 24)",0.16140062
-SDY569,layer_2,weight,"(1, 25)",-0.17381784
-SDY569,layer_2,weight,"(1, 26)",-0.13487971
-SDY569,layer_2,weight,"(1, 27)",-0.034567624
-SDY569,layer_2,bias,"(0,)",-0.038480893
-SDY569,layer_2,bias,"(1,)",-0.04665286
-SDY569,layer_2,bias,"(2,)",-0.014168615
-SDY569,layer_2,bias,"(3,)",0.0
-SDY569,layer_2,bias,"(4,)",-0.035472725
-SDY569,layer_2,bias,"(5,)",0.0
-SDY569,layer_2,bias,"(6,)",-0.04099224
-SDY569,layer_2,bias,"(7,)",-0.038098764
-SDY569,layer_2,bias,"(8,)",-0.03157306
+SDY569,layer_0,weight,"(0, 0, 0, 0)",0.27225503
+SDY569,layer_0,weight,"(0, 0, 0, 1)",0.15897255
+SDY569,layer_0,weight,"(0, 0, 0, 2)",-0.00089112646
+SDY569,layer_0,weight,"(0, 0, 0, 3)",0.15231813
+SDY569,layer_0,weight,"(1, 0, 0, 0)",0.65462536
+SDY569,layer_0,weight,"(1, 0, 0, 1)",-0.24999659
+SDY569,layer_0,weight,"(1, 0, 0, 2)",0.62464947
+SDY569,layer_0,weight,"(1, 0, 0, 3)",-0.080657974
+SDY569,layer_0,weight,"(2, 0, 0, 0)",-0.4275838
+SDY569,layer_0,weight,"(2, 0, 0, 1)",0.09143964
+SDY569,layer_0,weight,"(2, 0, 0, 2)",-0.29042307
+SDY569,layer_0,weight,"(2, 0, 0, 3)",0.43203285
+SDY569,layer_0,bias,"(0,)",0.0533234
+SDY569,layer_0,bias,"(1,)",0.053371795
+SDY569,layer_0,bias,"(2,)",0.04506479
+SDY569,layer_0,bias,"(3,)",-0.011427772
+SDY569,layer_1,weight,"(0, 0)",-0.26810333
+SDY569,layer_1,weight,"(0, 1)",0.3753936
+SDY569,layer_1,weight,"(1, 0)",-0.0064165755
+SDY569,layer_1,weight,"(1, 1)",0.17585999
+SDY569,layer_1,weight,"(2, 0)",0.20459509
+SDY569,layer_1,weight,"(2, 1)",0.03658966
+SDY569,layer_1,weight,"(3, 0)",0.21563327
+SDY569,layer_1,weight,"(3, 1)",0.4574402
+SDY569,layer_1,weight,"(4, 0)",0.32528004
+SDY569,layer_1,weight,"(4, 1)",0.44951183
+SDY569,layer_1,weight,"(5, 0)",0.112564415
+SDY569,layer_1,weight,"(5, 1)",-0.087682426
+SDY569,layer_1,weight,"(6, 0)",0.40550825
+SDY569,layer_1,weight,"(6, 1)",0.4840876
+SDY569,layer_1,weight,"(7, 0)",0.026640143
+SDY569,layer_1,weight,"(7, 1)",0.11180934
+SDY569,layer_1,weight,"(8, 0)",-0.26898116
+SDY569,layer_1,weight,"(8, 1)",-0.28346664
+SDY569,layer_1,weight,"(9, 0)",-0.43362606
+SDY569,layer_1,weight,"(9, 1)",0.21092992
+SDY569,layer_1,weight,"(10, 0)",-0.12852189
+SDY569,layer_1,weight,"(10, 1)",0.049901627
+SDY569,layer_1,weight,"(11, 0)",-0.06876286
+SDY569,layer_1,weight,"(11, 1)",-0.25704566
+SDY569,layer_1,weight,"(12, 0)",0.32827014
+SDY569,layer_1,weight,"(12, 1)",0.14809981
+SDY569,layer_1,weight,"(13, 0)",-0.2304666
+SDY569,layer_1,weight,"(13, 1)",0.25642833
+SDY569,layer_1,weight,"(14, 0)",-0.33775076
+SDY569,layer_1,weight,"(14, 1)",0.08446441
+SDY569,layer_1,weight,"(15, 0)",0.35694188
+SDY569,layer_1,weight,"(15, 1)",-0.18255685
+SDY569,layer_1,weight,"(16, 0)",-0.014512358
+SDY569,layer_1,weight,"(16, 1)",-0.031709693
+SDY569,layer_1,weight,"(17, 0)",0.33591223
+SDY569,layer_1,weight,"(17, 1)",0.47506103
+SDY569,layer_1,weight,"(18, 0)",0.031480525
+SDY569,layer_1,weight,"(18, 1)",0.32316032
+SDY569,layer_1,weight,"(19, 0)",0.08546662
+SDY569,layer_1,weight,"(19, 1)",0.1472717
+SDY569,layer_1,weight,"(20, 0)",0.31264284
+SDY569,layer_1,weight,"(20, 1)",-0.028122336
+SDY569,layer_1,weight,"(21, 0)",-0.1122257
+SDY569,layer_1,weight,"(21, 1)",0.27543673
+SDY569,layer_1,weight,"(22, 0)",-0.1703654
+SDY569,layer_1,weight,"(22, 1)",-0.1446292
+SDY569,layer_1,weight,"(23, 0)",-0.33316064
+SDY569,layer_1,weight,"(23, 1)",-0.24305843
+SDY569,layer_1,weight,"(24, 0)",-0.08793059
+SDY569,layer_1,weight,"(24, 1)",0.2921944
+SDY569,layer_1,weight,"(25, 0)",-0.46743342
+SDY569,layer_1,weight,"(25, 1)",-0.16586912
+SDY569,layer_1,weight,"(26, 0)",0.32843366
+SDY569,layer_1,weight,"(26, 1)",0.009062746
+SDY569,layer_1,weight,"(27, 0)",0.083762765
+SDY569,layer_1,weight,"(27, 1)",0.33028305
+SDY569,layer_1,bias,"(0,)",-0.045397684
+SDY569,layer_1,bias,"(1,)",0.052710332
+SDY569,layer_2,weight,"(0, 0)",-0.34357268
+SDY569,layer_2,weight,"(0, 1)",0.0384719
+SDY569,layer_2,weight,"(0, 2)",-0.15661213
+SDY569,layer_2,weight,"(0, 3)",-0.30389675
+SDY569,layer_2,weight,"(0, 4)",0.081751026
+SDY569,layer_2,weight,"(0, 5)",-0.40889162
+SDY569,layer_2,weight,"(0, 6)",0.076724455
+SDY569,layer_2,weight,"(0, 7)",-0.004354
+SDY569,layer_2,weight,"(0, 8)",-0.25691018
+SDY569,layer_2,weight,"(0, 9)",-0.438026
+SDY569,layer_2,weight,"(0, 10)",0.011761379
+SDY569,layer_2,weight,"(0, 11)",-0.35007766
+SDY569,layer_2,weight,"(0, 12)",-0.42412636
+SDY569,layer_2,weight,"(0, 13)",-0.029006958
+SDY569,layer_2,weight,"(0, 14)",0.3404438
+SDY569,layer_2,weight,"(0, 15)",0.20984969
+SDY569,layer_2,weight,"(0, 16)",0.09142717
+SDY569,layer_2,weight,"(0, 17)",0.09446751
+SDY569,layer_2,weight,"(0, 18)",-0.08114132
+SDY569,layer_2,weight,"(0, 19)",-0.18430325
+SDY569,layer_2,weight,"(0, 20)",-0.06719425
+SDY569,layer_2,weight,"(0, 21)",-0.020093828
+SDY569,layer_2,weight,"(0, 22)",-0.44674078
+SDY569,layer_2,weight,"(0, 23)",0.36487272
+SDY569,layer_2,weight,"(0, 24)",0.07213997
+SDY569,layer_2,weight,"(0, 25)",0.34452862
+SDY569,layer_2,weight,"(0, 26)",0.04733317
+SDY569,layer_2,weight,"(0, 27)",0.25914404
+SDY569,layer_2,weight,"(1, 0)",-0.0537996
+SDY569,layer_2,weight,"(1, 1)",-0.38970932
+SDY569,layer_2,weight,"(1, 2)",0.19122039
+SDY569,layer_2,weight,"(1, 3)",0.05655432
+SDY569,layer_2,weight,"(1, 4)",0.3119544
+SDY569,layer_2,weight,"(1, 5)",0.1416303
+SDY569,layer_2,weight,"(1, 6)",-0.16703475
+SDY569,layer_2,weight,"(1, 7)",-0.291436
+SDY569,layer_2,weight,"(1, 8)",0.33735806
+SDY569,layer_2,weight,"(1, 9)",-0.2919163
+SDY569,layer_2,weight,"(1, 10)",0.049928244
+SDY569,layer_2,weight,"(1, 11)",0.24912536
+SDY569,layer_2,weight,"(1, 12)",0.13805664
+SDY569,layer_2,weight,"(1, 13)",-0.3667409
+SDY569,layer_2,weight,"(1, 14)",-0.10583032
+SDY569,layer_2,weight,"(1, 15)",-0.28706676
+SDY569,layer_2,weight,"(1, 16)",0.03502237
+SDY569,layer_2,weight,"(1, 17)",0.07370194
+SDY569,layer_2,weight,"(1, 18)",-0.35622332
+SDY569,layer_2,weight,"(1, 19)",0.13219595
+SDY569,layer_2,weight,"(1, 20)",-0.0009631264
+SDY569,layer_2,weight,"(1, 21)",-0.19241789
+SDY569,layer_2,weight,"(1, 22)",0.26613706
+SDY569,layer_2,weight,"(1, 23)",-0.09741437
+SDY569,layer_2,weight,"(1, 24)",0.10222087
+SDY569,layer_2,weight,"(1, 25)",-0.24689198
+SDY569,layer_2,weight,"(1, 26)",-0.20129979
+SDY569,layer_2,weight,"(1, 27)",-0.42364296
+SDY569,layer_2,bias,"(0,)",0.0
+SDY569,layer_2,bias,"(1,)",-0.0059600654
+SDY569,layer_2,bias,"(2,)",-0.043360252
+SDY569,layer_2,bias,"(3,)",-0.030783173
+SDY569,layer_2,bias,"(4,)",0.045504324
+SDY569,layer_2,bias,"(5,)",0.033877216
+SDY569,layer_2,bias,"(6,)",-0.0059640347
+SDY569,layer_2,bias,"(7,)",0.0
+SDY569,layer_2,bias,"(8,)",0.04663136
 SDY569,layer_2,bias,"(9,)",0.0
-SDY569,layer_2,bias,"(10,)",0.0
-SDY569,layer_2,bias,"(11,)",-0.038239233
-SDY569,layer_2,bias,"(12,)",0.0
+SDY569,layer_2,bias,"(10,)",-0.043454032
+SDY569,layer_2,bias,"(11,)",-0.044771887
+SDY569,layer_2,bias,"(12,)",-0.056607794
 SDY569,layer_2,bias,"(13,)",0.0
-SDY569,layer_2,bias,"(14,)",0.0
-SDY569,layer_2,bias,"(15,)",-0.014951911
-SDY569,layer_2,bias,"(16,)",0.02312439
-SDY569,layer_2,bias,"(17,)",-0.00458999
-SDY569,layer_2,bias,"(18,)",0.017775143
-SDY569,layer_2,bias,"(19,)",0.03250701
-SDY569,layer_2,bias,"(20,)",-0.009465838
-SDY569,layer_2,bias,"(21,)",-0.019599583
-SDY569,layer_2,bias,"(22,)",-0.017363578
-SDY569,layer_2,bias,"(23,)",0.0
-SDY569,layer_2,bias,"(24,)",0.05963628
-SDY569,layer_2,bias,"(25,)",0.0
-SDY569,layer_2,bias,"(26,)",0.0
-SDY569,layer_2,bias,"(27,)",0.0
-SDY569,layer_3,weight,"(0, 0, 0, 0)",0.17029011
-SDY569,layer_3,weight,"(0, 0, 1, 0)",0.47103626
-SDY569,layer_3,weight,"(0, 0, 2, 0)",0.30793136
-SDY569,layer_3,weight,"(0, 0, 3, 0)",0.10770323
-SDY569,layer_3,weight,"(1, 0, 0, 0)",-0.17203026
-SDY569,layer_3,weight,"(1, 0, 1, 0)",-0.50257933
-SDY569,layer_3,weight,"(1, 0, 2, 0)",-0.3194602
-SDY569,layer_3,weight,"(1, 0, 3, 0)",-0.024539111
-SDY569,layer_3,weight,"(2, 0, 0, 0)",-0.12316963
-SDY569,layer_3,weight,"(2, 0, 1, 0)",-0.4695171
-SDY569,layer_3,weight,"(2, 0, 2, 0)",-0.18691331
-SDY569,layer_3,weight,"(2, 0, 3, 0)",-0.31644922
-SDY569,layer_3,bias,"(0,)",0.046714146
+SDY569,layer_2,bias,"(14,)",-0.0294205
+SDY569,layer_2,bias,"(15,)",-0.005962668
+SDY569,layer_2,bias,"(16,)",-0.04659159
+SDY569,layer_2,bias,"(17,)",-0.0484128
+SDY569,layer_2,bias,"(18,)",0.0
+SDY569,layer_2,bias,"(19,)",0.054574024
+SDY569,layer_2,bias,"(20,)",-0.0049366825
+SDY569,layer_2,bias,"(21,)",0.0
+SDY569,layer_2,bias,"(22,)",-0.018930875
+SDY569,layer_2,bias,"(23,)",0.051100336
+SDY569,layer_2,bias,"(24,)",-0.0463834
+SDY569,layer_2,bias,"(25,)",-0.020349652
+SDY569,layer_2,bias,"(26,)",0.032142285
+SDY569,layer_2,bias,"(27,)",-0.0038875528
+SDY569,layer_3,weight,"(0, 0, 0, 0)",0.16362178
+SDY569,layer_3,weight,"(0, 0, 1, 0)",-0.19893318
+SDY569,layer_3,weight,"(0, 0, 2, 0)",-0.5796866
+SDY569,layer_3,weight,"(0, 0, 3, 0)",-0.21796085
+SDY569,layer_3,weight,"(1, 0, 0, 0)",0.61127687
+SDY569,layer_3,weight,"(1, 0, 1, 0)",-0.24067833
+SDY569,layer_3,weight,"(1, 0, 2, 0)",0.13279693
+SDY569,layer_3,weight,"(1, 0, 3, 0)",-0.36781573
+SDY569,layer_3,weight,"(2, 0, 0, 0)",0.67681205
+SDY569,layer_3,weight,"(2, 0, 1, 0)",0.609427
+SDY569,layer_3,weight,"(2, 0, 2, 0)",-0.39802703
+SDY569,layer_3,weight,"(2, 0, 3, 0)",-0.18712664
+SDY569,layer_3,bias,"(0,)",0.043663297

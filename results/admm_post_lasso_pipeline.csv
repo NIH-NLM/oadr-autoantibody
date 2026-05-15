@@ -1,0 +1,13 @@
+config,method,n_selected,MSE,R2,achieved_power,N,selected
+"Panel A, all 4 studies",MLR FedAvg-by-N,4,0.2129148875970073,0.024431263704984607,0.2923016296082944,150,"IA2IC, ZNT8, 8-12, Sex"
+"Panel A, all 4 studies",Lasso ADMM,4,0.22369514125094264,-0.024963490005311062,,150,"IA2IC, ZNT8, 8-12, Sex"
+"Panel A, all 4 studies",RF union-of-forests,4,0.2387067809987328,-0.09374631014415735,,150,"IA2IC, ZNT8, 8-12, Sex"
+"Panel A, drop SDY1737",MLR FedAvg-by-N,5,0.1886118236894694,0.05112964886200788,0.4951265736841737,134,"GAD65, IA2IC, ZNT8, 8-12, Sex"
+"Panel A, drop SDY1737",Lasso ADMM,5,0.2007346389045653,-0.009857937732072886,,134,"GAD65, IA2IC, ZNT8, 8-12, Sex"
+"Panel A, drop SDY1737",RF union-of-forests,5,0.21206979964048325,-0.06688298386812042,,134,"GAD65, IA2IC, ZNT8, 8-12, Sex"
+"Panel B, all 3 studies",MLR FedAvg-by-N,6,0.19558279417577265,0.0747702941724937,0.4934513455984296,98,"Sex, disease_duration_years, weight_kg, GAD65, IA2IC, received_active_treatment"
+"Panel B, all 3 studies",Lasso ADMM,6,0.18705403679298166,0.11511668413797338,0.7340983248514614,98,"Sex, disease_duration_years, weight_kg, GAD65, IA2IC, received_active_treatment"
+"Panel B, all 3 studies",RF union-of-forests,6,0.19980512190083471,0.05479602672514561,0.3567943770710783,98,"Sex, disease_duration_years, weight_kg, GAD65, IA2IC, received_active_treatment"
+"Panel B, drop SDY1737",MLR FedAvg-by-N,4,0.1117486307894042,0.35355522492818625,0.9999085228143619,82,"Sex, weight_kg, GAD65, received_active_treatment"
+"Panel B, drop SDY1737",Lasso ADMM,4,0.11594672775282171,0.3292700249389313,0.9996762143400403,82,"Sex, weight_kg, GAD65, received_active_treatment"
+"Panel B, drop SDY1737",RF union-of-forests,4,0.1346723804061499,0.22094565235340669,0.9768633974942285,82,"Sex, weight_kg, GAD65, received_active_treatment"

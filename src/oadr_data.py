@@ -231,7 +231,20 @@ def load_panel_b_all(impute_bmi: bool = True) -> pd.DataFrame:
 
 
 def panel_b_design_matrix(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series, list[str]]:
-    """Turn a Panel B frame into (X, y, feature_names) with categoricals one-hot encoded."""
+    """Turn a Panel B frame into (X, y, feature_names) with categoricals one-hot encoded.
+
+    Note on ``cohort_group``: the raw column mixes study-specific labels (e.g.
+    SDY569's internal arm codes ``1`` and ``2``) and age bins (``Adult``,
+    ``Pediatric``) that are redundant with the continuous ``age_years``
+    column.  Rather than one-hot encode all of them, we collapse the column
+    into a single binary ``received_active_treatment`` flag derived from
+    the SDY524 (AbATE) trial arms: ``hOKT3`` (the active anti-CD3 antibody
+    arm) → 1, ``Control`` → 0, every other label (other studies, missing) → 0.
+    This preserves the one biologically interpretable signal in the column
+    (active treatment vs placebo) without leaving the design matrix with
+    five fragmented ``cohort_group`` dummies, three of which are non-
+    interpretable across studies.
+    """
     y = df["log_auc"].astype(float)
     base_cont = ["Sex", "age_years", "disease_duration_years",
                  "bmi", "height_cm", "weight_kg",
@@ -239,7 +252,14 @@ def panel_b_design_matrix(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series, li
     if "bmi_missing" in df.columns:
         base_cont.append("bmi_missing")
     cont = df[[c for c in base_cont if c in df.columns]].astype(float)
-    cat_df = df[[c for c in ("race", "ethnicity", "cohort_group") if c in df.columns]].copy()
+
+    # Collapse cohort_group to a single binary "received active treatment".
+    if "cohort_group" in df.columns:
+        received_active = (df["cohort_group"].astype(str) == "hOKT3").astype(float)
+        cont = pd.concat([cont, received_active.rename("received_active_treatment")], axis=1)
+
+    # One-hot encode only race and ethnicity now; cohort_group is dropped.
+    cat_df = df[[c for c in ("race", "ethnicity") if c in df.columns]].copy()
     for c in cat_df.columns:
         cat_df[c] = cat_df[c].astype(str).fillna("MISSING")
     cats = pd.get_dummies(cat_df, drop_first=True).astype(float)
