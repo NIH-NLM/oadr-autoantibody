@@ -1,0 +1,61 @@
+# Conda environment for the OADR autoantibody federated-learning notebooks.
+#
+# Create on macOS / Linux:
+#     conda env create -f environment.yml
+#     conda activate oadr-autoantibody
+#     jupyter lab
+#
+# Update an existing env when this file changes:
+#     conda env update -f environment.yml --prune
+#
+# Tested versions match the springer-verlag env used to generate the talk
+# figures (May 2026): Python 3.12, NumPy 2.3, scikit-learn 1.7, statsmodels
+# 0.14, TensorFlow 2.20.  Pins are kept loose (`>=`) so conda can resolve
+# compatible builds on Apple-silicon macOS and Linux without manual nudging.
+#
+# Notes
+# -----
+# - TensorFlow is installed via pip rather than conda-forge.  conda-forge
+#   ships TF on a release lag (often a major version behind PyPI) and the
+#   pip wheel pulls in tensorflow-metal automatically on Apple silicon for
+#   GPU acceleration, which the autoencoder-CNN training benefits from.
+# - We pin scikit-learn >=1.5 because LassoCV / ElasticNetCV got faster
+#   coordinate-descent default tolerances starting there; behaviour
+#   identical to 1.7 for the notebooks but somewhat slower on 1.4 and
+#   earlier.
+# - jupyterlab + ipykernel are both included so `jupyter lab` works and the
+#   kernel registers as "Python 3 (ipykernel)" matching what the .ipynb
+#   metadata expects.
+
+name: oadr-autoantibody
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+
+  # Core scientific stack
+  - numpy>=2.0
+  - pandas>=2.1
+  - scipy>=1.13
+  - matplotlib>=3.8
+  - seaborn>=0.13
+
+  # Modelling
+  - scikit-learn>=1.5
+  - statsmodels>=0.14
+
+  # I/O
+  - h5py>=3.10              # required by TensorFlow for .weights.h5 files
+
+  # Notebook environment
+  - jupyterlab>=4.0
+  - ipykernel>=6.25
+  - ipywidgets>=8.0         # progress bars and interactive widgets
+
+  # Quality-of-life
+  - tqdm>=4.65              # progress bars in long bootstrap/permutation loops
+
+  # TensorFlow and TF-only dependencies go via pip — see note above
+  - pip
+  - pip:
+      - tensorflow>=2.18,<2.22
