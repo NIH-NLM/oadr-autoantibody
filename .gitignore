@@ -2,54 +2,5 @@
 .claude/
 .DS_Store
 
-# Python
-__pycache__/
-*.pyc
-*.pyo
-
-# Jupyter
-.ipynb_checkpoints/
-
-# Generated model artefacts (regeneratable; do not commit)
-*.weights.h5
-*.keras
-*.pkl
-*.h5
-
-# ImmPort raw data dumps (licensed; not redistributable)
-data/SDY*/SDY*-DR*_MySQL/
-data/SDY*/*.zip
-data/SDY*/ITN*.txt
-data/SDY524/SDY524_log_auc*.csv
-data/SDY524/subj*.csv
-
-# Heatmap HTML and old plot subdirectories
-*_heatmap.html
-federated_*_heatmap.html
-SDY*_heatmap.html
-figures/html/
-figures/pdf/
-figures/star/
-figures/importance/
-
-# Side workstreams (not part of the talk)
-models/
-rf_results/
-outputs/
-omop_mapping/
-bin/notebook_builders/
-bin/test_power_analysis.py
-
-# Intermediate / scratch artefacts
-oadr-autoantibody-commit_history.txt
-SDY*_cpeptide_tidy.csv
-data/SDY*_log_auc*.csv
-data/df_weights*.csv
-data/mse_comparison*.csv
-data/per_age_group_mse_median.csv
-data/per_antibody_mse_median.csv
-data/per_sex_mse_median.csv
-
-# Plots-only legacy directories
-plots/
-plots_per_antibody/
+figures/
+results/
