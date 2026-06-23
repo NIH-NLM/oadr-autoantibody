@@ -222,8 +222,10 @@ def load_panel_b_all(impute_bmi: bool = True) -> pd.DataFrame:
     add a 'bmi_missing' flag column.
     """
     df = pd.concat([load_panel_b(s) for s in PANEL_B_STUDIES], ignore_index=True)
+    bad_h = df["height_cm"] <= 0
+    df.loc[bad_h, "height_cm"] = np.sqrt(df.loc[bad_h, "weight_kg"] / df.loc[bad_h, "bmi"]) * 100
+
     if impute_bmi:
-        df["bmi_missing"] = df["bmi"].isna().astype(int)
         for col in ("bmi", "height_cm", "weight_kg"):
             df[col] = df.groupby("Study")[col].transform(lambda s: s.fillna(s.median()))
             df[col] = df[col].fillna(df[col].median())
