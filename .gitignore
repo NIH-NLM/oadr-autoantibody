@@ -4,3 +4,9 @@
 
 figures/
 results/
+.ipynb_checkpoints
+data/
+plots/
+rf_results/
+outputs/
+bin/notebook_builders
