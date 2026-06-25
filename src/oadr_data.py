@@ -143,6 +143,34 @@ _JEFF_STUDY_FILES = {
 }
 
 
+def _treatment_from_arms(study, subject_ids):
+    """Per-subject active-treatment flag by transitive closure: subject -> arm
+    (data/arms/<study>_arm_2_subject.txt) -> treatment, where the control arm is
+    identified by name/description (placebo / control / no treatment) and the
+    treatment arm is the other.  This works across different drugs (hOKT3,
+    teplizumab, alefacept).  If a study has no control arm — e.g. SDY1737, whose
+    arms are age groups (Adult / Pediatric) — treatment is undetermined and all
+    subjects are 0.  Returns a 0/1 Series positionally aligned to subject_ids."""
+    arm_file = _DATA / "arms" / f"{study}_arm_or_cohort.txt"
+    a2s_file = _DATA / "arms" / f"{study}_arm_2_subject.txt"
+    subject_ids = list(subject_ids)
+    zero = pd.Series([0.0] * len(subject_ids))
+    if not (arm_file.exists() and a2s_file.exists()):
+        return zero
+    arms = pd.read_csv(arm_file, sep="\t")
+    a2s = pd.read_csv(a2s_file, sep="\t")
+    ctrl_pat = "placebo|control|no treatment"
+    ctrl_mask = (arms["NAME"].str.contains(ctrl_pat, case=False, na=False)
+                 | arms["DESCRIPTION"].str.contains(ctrl_pat, case=False, na=False))
+    if not ctrl_mask.any():
+        return zero                      # no control arm -> treatment undetermined
+    ctrl_arms = set(arms.loc[ctrl_mask, "ARM_ACCESSION"])
+    treat_arms = set(arms["ARM_ACCESSION"]) - ctrl_arms
+    sub2treat = {r.SUBJECT_ACCESSION: (1.0 if r.ARM_ACCESSION in treat_arms else 0.0)
+                 for r in a2s.itertuples()}
+    return pd.Series([sub2treat.get(s, 0.0) for s in subject_ids])
+
+
 def _parse_date(s):
     return pd.to_datetime(s, errors="coerce")
 
@@ -206,10 +234,11 @@ def load_panel_b(study: str) -> pd.DataFrame:
     df = aa.merge(demo, on="Subject_ID", how="inner").merge(cpep, on="Subject_ID", how="inner")
     df["log_auc"] = np.log(df["C_Peptide_AUC_4Hrs"])
     df["Study"] = study
+    df["received_active_treatment"] = _treatment_from_arms(study, df["Subject_ID"]).values
 
     cols = (["Subject_ID", "Study", "Sex", "age_years", "disease_duration_years",
              "bmi", "height_cm", "weight_kg",
-             "race", "ethnicity", "cohort_group",
+             "race", "ethnicity", "cohort_group", "received_active_treatment",
              "GAD65", "IA2IC", "MIAA", "ZNT8", "ICA",
              "C_Peptide_AUC_4Hrs", "log_auc"])
     return df[[c for c in cols if c in df.columns]]
@@ -235,17 +264,12 @@ def load_panel_b_all(impute_bmi: bool = True) -> pd.DataFrame:
 def panel_b_design_matrix(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series, list[str]]:
     """Turn a Panel B frame into (X, y, feature_names) with categoricals one-hot encoded.
 
-    Note on ``cohort_group``: the raw column mixes study-specific labels (e.g.
-    SDY569's internal arm codes ``1`` and ``2``) and age bins (``Adult``,
-    ``Pediatric``) that are redundant with the continuous ``age_years``
-    column.  Rather than one-hot encode all of them, we collapse the column
-    into a single binary ``received_active_treatment`` flag derived from
-    the SDY524 (AbATE) trial arms: ``hOKT3`` (the active anti-CD3 antibody
-    arm) → 1, ``Control`` → 0, every other label (other studies, missing) → 0.
-    This preserves the one biologically interpretable signal in the column
-    (active treatment vs placebo) without leaving the design matrix with
-    five fragmented ``cohort_group`` dummies, three of which are non-
-    interpretable across studies.
+    ``received_active_treatment`` is set in ``load_panel_b`` by transitive
+    closure over the ImmPort arm files (subject → arm → treatment, where the
+    treatment arm is the anti-CD3 / hOKT3 / teplizumab arm).  The raw
+    ``cohort_group`` column is dropped: it mixes study-specific arm codes
+    (SDY569 uses ``1``/``2``) and age bins (SDY1737 uses ``Adult``/
+    ``Pediatric``) that are not comparable across studies.
     """
     y = df["log_auc"].astype(float)
     base_cont = ["Sex", "age_years", "disease_duration_years",
@@ -253,12 +277,9 @@ def panel_b_design_matrix(df: pd.DataFrame) -> tuple[pd.DataFrame, pd.Series, li
                  "GAD65", "IA2IC", "MIAA", "ZNT8", "ICA"]
     if "bmi_missing" in df.columns:
         base_cont.append("bmi_missing")
+    if "received_active_treatment" in df.columns:
+        base_cont.append("received_active_treatment")
     cont = df[[c for c in base_cont if c in df.columns]].astype(float)
-
-    # Collapse cohort_group to a single binary "received active treatment".
-    if "cohort_group" in df.columns:
-        received_active = (df["cohort_group"].astype(str) == "hOKT3").astype(float)
-        cont = pd.concat([cont, received_active.rename("received_active_treatment")], axis=1)
 
     # One-hot encode only race and ethnicity now; cohort_group is dropped.
     cat_df = df[[c for c in ("race", "ethnicity") if c in df.columns]].copy()
