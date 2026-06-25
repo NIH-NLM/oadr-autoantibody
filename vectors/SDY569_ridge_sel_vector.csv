@@ -1,0 +1,6 @@
+feature,coefficient,n_subjects,study,method
+__intercept__,-1.023613827486393,10,SDY569,ridge
+weight_kg,0.5787349356925292,10,SDY569,ridge
+GAD65,0.07412380936443168,10,SDY569,ridge
+received_active_treatment,0.4006394961030479,10,SDY569,ridge
+Sex,-0.11806744636975516,10,SDY569,ridge

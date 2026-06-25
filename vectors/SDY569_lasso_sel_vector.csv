@@ -1,0 +1,6 @@
+feature,coefficient,n_subjects,study,method
+__intercept__,-1.1830010134186837,10,SDY569,lasso
+weight_kg,1.3788187597215313,10,SDY569,lasso
+GAD65,-0.0661230482598492,10,SDY569,lasso
+received_active_treatment,0.17775128475403215,10,SDY569,lasso
+Sex,0.007023993735941567,10,SDY569,lasso
