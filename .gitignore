@@ -2,7 +2,6 @@
 .claude/
 .DS_Store
 
-figures/
 results/
 .ipynb_checkpoints
 data/
