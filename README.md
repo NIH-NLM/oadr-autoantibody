@@ -1,202 +1,175 @@
 # Predicting residual beta-cell function in Type 1 Diabetes, under federation
 
-This repository contains the analytical work for the **federated prediction of pancreatic beta-cell function** from autoantibody
-profiles, across four independent clinical study cohorts (SDY524, SDY569,
-SDY797, SDY1737) plus a fifth (SDY1625) used only for the unsupervised
-reconstruction.
+Analytical work for the **federated prediction of pancreatic beta-cell
+function** from autoantibody and clinical profiles, across four independent
+ImmPort clinical-study cohorts (SDY524, SDY569, SDY797, SDY1737). Presented at
+BioITWorld 2026 — talk deck: [`slides/2026BioITWorld_Federated_Learning_v9.pdf`](slides/2026BioITWorld_Federated_Learning_v9.pdf),
+markdown rendering aligned to the notebooks: [`SLIDES.md`](SLIDES.md).
 
 ## The biological premise
 
-Type 1 Diabetes is an autoimmune disease in which the patient's own immune
-system progressively destroys the insulin-producing **beta cells** of the
-pancreatic islets of Langerhans. The natural history of the disease is the
-slow disappearance of those cells; in long-standing Type 1 Diabetes there are
-essentially none left.
+Type 1 Diabetes is an autoimmune disease in which the immune system
+progressively destroys the insulin-producing **beta cells** of the pancreas.
+The standard quantitative readout of how many functional beta cells remain is
+the **C-peptide** released during a four-hour mixed-meal tolerance test;
+C-peptide is cleaved off one-to-one with insulin and is not confounded by
+injected insulin, so the area under its concentration curve (**C-peptide AUC**)
+is the field-standard measure of *endogenous* beta-cell output.
 
-The most informative quantitative readout of how many functional beta cells a
-patient still has is the **C-peptide** they release during a standardised
-four-hour mixed-meal tolerance test. C-peptide is the short fragment that
-gets cleaved off when proinsulin matures into insulin, so it is released into
-the bloodstream in exact one-to-one proportion with insulin. Unlike insulin
-itself it is not removed by the liver in the first pass and is not confounded
-by injected insulin treatment, which makes the area under its four-hour
-blood-concentration curve (C-peptide AUC) the field-standard measurement of
-*endogenous* beta-cell output in a treated Type 1 Diabetes patient. Higher
-C-peptide AUC means more surviving beta-cell mass.
+The five autoantibodies in the panel — GAD65, IA-2 (IA2IC), insulin (MIAA),
+ICA, ZnT8 — are immune signatures of the destruction process. The scientific
+question: **how well does the autoantibody profile predict the beta-cell
+function that survives the attack?**
 
-The five autoantibodies in the input panel — GAD65, IA-2 (IA2IC), Insulin
-(MIAA), ICA, ZnT8 — are the immune signatures of the destruction process.
-Their levels rise during the immune attack on the beta cells. The natural
-scientific question is therefore: **how well does the autoantibody profile
-predict the beta-cell function that survives that attack?** That is what every
-model in this repository is trying to answer.
+> **Read the [Limitations](#limitations) before the results.** The short answer
+> is that the autoantibody panel alone is *not* predictive; what predictive
+> power exists comes largely from body-size / age demographics, which are a
+> known confound of C-peptide AUC.
 
-## Privacy-preserving Federation
+## Privacy-preserving federation
 
-Each cohort comes from a different institutional clinical study with its own
-data-use governance. In a real deployment those data sets cannot be moved
-between institutions: privacy regulations, IRB constraints, and institutional
-policies forbid it.  To enable increasing cohort size, which allows one then to
-gain statistical power can be achieved with federated learning.
+Each cohort comes from a different institution and cannot be centralised (IRB,
+data-use governance). The institutions share **only model parameters** trained
+locally; a coordinator aggregates them. No subject-level data ever moves.
 
-In this simulation, the four institutions cannot agree to centralise their data, but they can
-agree to share **only** model parameters after each one has trained on its
-own subjects, and to accept a central coordinator that aggregates those
-parameters by taking the median value across institutions for each parameter.
+This repository simulates that faithfully: every model is fit **per study**, and
+only coefficient vectors (or, for random forest, the trained forest) are
+combined. There is no pooling — not in fitting, not in feature scaling (each
+institution min–max scales its own data), and not in scoring.
 
-## What Federation Provides
+## The two-stage architecture
 
-1. **Federation across more institutions improves prediction.** Adding more
-   participating studies to the federation lowers the prediction error of
-   every method, even when each study only trains once. The plot of
-   prediction error against number of participating institutions is the
-   talk's first central figure.
+**Stage 1 — per-study notebooks** (`Ridge_<study>`, `Lasso_<study>`,
+`RandomForest_<study>`). Each institution fits on its own subjects, LASSO
+determines the features, and each writes its model artifact for the four
+selected features (weight_kg, GAD65, received_active_treatment, Sex):
 
-2. **Iterating federation across multiple rounds extracts further benefit
-   until the improvement plateaus.** When each institution warm-starts its
-   local model from the previous round's aggregated parameters and continues
-   training, then re-federates, the prediction error continues to fall until
-   the round-over-round improvement is too small to matter. The plot of
-   prediction error against round number is the talk's second central
-   figure.
+- LASSO / Ridge → `vectors/<study>_<method>_sel_vector.csv` (coefficients)
+- Random Forest → `models/<study>_rf_sel.pkl` (the trained forest)
 
-3. **Federation lifts the cohort-size ceiling on what effects can be
-   detected.** At a fixed biological effect size, the probability of detecting that effect grows
-   with cohort size. A single institution alone (the smallest is
-   SDY569 with N = 10 subjects) cannot fit a 9-feature regression. The
-   minimum detectable effect size shrinks from R² ≥ 0.91 at N = 10 (only
-   near-deterministic effects detectable) to R² ≥ 0.10 at N = 150 (a
-   biologically plausible effect size that single-institution studies would
-   have missed entirely). **We are not constrained by single-institution
-   cohort size when we have federation.** This is the same reasoning that
-   motivates multi-site clinical trials, except expressed as a computational
-   protocol rather than as a centralised database.
+*(In production the LASSO-determined features become the OMOP-selected feature
+set, harmonised across institutions.)*
 
-Five prediction methods are compared, evaluated under the same federation
-protocol:
+**Stage 2 — federated notebooks** (`<method>_<study>_federated_w_SDY_coefficients`).
+Each reads the **other** institutions' artifacts from disk, applies them to this
+institution's own data, and produces the presentation graphics: solo vs
+federated, with R² (bootstrap 95% CI) and MSE. Only artifacts cross
+institutions; subject-level data never moves.
 
-| Method | Family | Interpretable? |
-|---|---|---|
-| Simple linear regression | Linear, no regularisation | yes (coefficients) |
-| Lasso regression¹ | Linear, automatic feature selection via L1 penalty | yes (non-zero coefficients) |
-| Random Forest (used here for *regression*, not classification)² | Tree ensemble, non-linear | yes (feature importance) |
-| Convolutional neural network | Non-linear deep model, no pretraining | no (latent layers) |
-| Convolutional network with autoencoder pretraining | Non-linear, two-stage training: unsupervised feature learning then a small supervised head | no (latent layers) |
-
-¹ **Lasso** is an acronym for *Least Absolute Shrinkage and Selection
-Operator*. It is linear regression using the absolute value of coefficients.
-Features that end up non-zero are the ones the data identifies as useful predictors, which makes lasso
-doubly informative: predicting *and* selecting features.
-
-² **Random Forest** is most commonly used for classification tasks,
-where a forest of decision trees votes on the class label. To extract a
-formal p-value from a Random Forest typically requires permuting the
-labels and re-fitting the forest hundreds or thousands of times. **In this
-repository the Random Forest is not used for classification or for
-p-values.** It is used as a *regression* model: each leaf of each tree
-predicts a continuous C-peptide value, and the forest's prediction is the
-average over its trees. Random Forest is included because it provides a
-non-linear but still interpretable alternative to the convolutional
-networks: its built-in *feature importance* ranking tells us which
-features the trees split on most often when reducing prediction error,
-which is the analogue of "which features matter" for the linear methods.
-
-## What we learned
-
-The federated experiment matrix in
-[`ipynb/federated_analysis_simulation_3x3.ipynb`](ipynb/federated_analysis_simulation_3x3.ipynb)
-produces a small number of clean findings:
-
-1. **For interpretable methods (simple linear, lasso, Random Forest),
-   federation across more institutions sharply reduces prediction error.**
-   Simple linear regression's prediction error falls from 1.03 at a single
-   institution (averaged across all four choices of which one) to 0.33 at
-   four institutions — a three-fold improvement. Lasso falls from 0.45 to
-   0.24; Random Forest from 0.37 to 0.25. All three interpretable methods
-   reach roughly the same federated prediction error and converge to a
-   similar floor.
-2. **For the naive convolutional network — no autoencoder — federation
-   *hurts* rather than helps.** Single-institution prediction error is 0.36
-   (the average of four solo runs) but the federated four-institution
-   number is 0.41. Naive median aggregation of the weights of
-   independently-trained neural networks across institutions degrades the
-   model because the per-institution networks settle into incompatible
-   parameterisations.
-3. **The autoencoder pretraining enables neural-network federation
-   work.** With an autoencoder learned per institution and
-   federated *before* the supervised head is trained, the predictive head
-   inherits a stable representation that all institutions share. The
-   resulting federated model holds at ~0.31 across cohort sizes and
-   continues to improve with iteration.
-4. **Multi-round federation extracts further benefit, but the curve
-   matters.** The plain convolutional network does drop sharply between
-   rounds 1 and 2 (warm-starting fixes the random-initialisation problem),
-   then degrades from rounds 3 onward. The autoencoder + head shows clean
-   monotonic improvement and plateaus at round 4 (mean prediction error
-   0.245), matching lasso's single-round federated number to two decimal
-   places.
-5. **Statistical power scales with cohort size, and federation is the
-   device that delivers cohort size without moving data.** At the medium
-   effect size R² = 0.15 (Cohen's f² ≈ 0.18), power along the
-   smallest-first federation path goes from *cannot fit the model*
-   (N = 10, alone) to 17 % (N = 26), to 65 % (N = 75), to 96 % (N = 150).
-   The minimum detectable effect size shrinks from R² ≥ 0.91 alone to
-   R² ≥ 0.10 fully federated. Single-institution studies would miss
-   biologically plausible effects that the federation can decisively
-   detect.
-
-## Conclusions
-
-**Federation increases the cohort-size in a privacy preserving manner**
-When we federate, we increase cohort size enabling smaller institutions to benefit.
-This is done without any institution acquiring more subjects or sharing any subject
-data. The interpretable models (linear, lasso, Random Forest) all
-benefit substantially; the deep models benefit only when an autoencoder
-provides a shared representation across institutions; iteration buys
-further accuracy until a plateau is reached.
-
-## How to read this repository
-
-Four notebooks, all under `ipynb/`:
-
-| Notebook | What it answers |
-|---|---|
-| [`LinearRegression_vs_CNN_HeadToHead.ipynb`](ipynb/LinearRegression_vs_CNN_HeadToHead.ipynb) | The centralised head-to-head: under pooled cross-validation, can a convolutional network beat simple linear regression on the same 9 features? Adds an autoencoder-pretrained variant as a probe for non-linearity. |
-| [`LASSO_ElasticNet_Autoantibody_CPeptide.ipynb`](ipynb/LASSO_ElasticNet_Autoantibody_CPeptide.ipynb) | The interpretable-linear iteration: lasso and elastic-net regression with the extended feature panel (Panel B), with selected-feature interpretation. |
-| [`EffectSizes_and_PowerAnalysis_Extended.ipynb`](ipynb/EffectSizes_and_PowerAnalysis_Extended.ipynb) | Effect sizes per feature, per-feature partial η², and *a-priori* statistical power calculations. Quantifies the minimum detectable effect size at each candidate cohort size, which sets up the federation power argument extended in the federated notebook below. |
-| [`federated_analysis_simulation_3x3.ipynb`](ipynb/federated_analysis_simulation_3x3.ipynb) | The federated story end to end: per-study autoencoder reconstruction, then C-peptide prediction under the federation protocol described above. Tests all three arguments numerically (more institutions, more rounds, more statistical power) for all five prediction methods. Produces slide-ready summary figures including the power-vs-cohort-size headline plot. |
-
-The shared loader [`src/oadr_data.py`](src/oadr_data.py) handles per-study
-column-naming quirks (one study uses `Subject_IDel` rather than `Subject_ID`;
-another uses `ImmPort Accession`) and exposes two feature panels:
-
-| Panel | Studies | Features | Effective N |
-|---|---|---|---|
-| **A** (legacy) | SDY524, SDY569, SDY797, SDY1737 | 5 autoantibodies + age-group indicators + sex (9 total) | 150 |
-| **B** (extended) | SDY524, SDY569, SDY1737 | Panel A + BMI, height, weight, exact age, disease duration, race, ethnicity, treatment cohort (23 total) | 98 |
-
-Older exploration that is not on the talk's critical path lives under
-`archive/`. Generated CSV outputs land in `results/`, figures in `figures/`
-as both PDF (vector, for archival) and PNG at 220 dots per inch (for direct
-import into a presentation deck).
-
-## Running the notebooks
-
-Tested kernel: `~/miniforge3/envs/springer-verlag/bin/python` (TensorFlow
-2.20, scikit-learn 1.7, statsmodels 0.14.6).
-
-```bash
-jupyter notebook ipynb/
+```
+per-study fit ──▶ vectors/*.csv, models/*.pkl ──▶ federated notebook ──▶ figures/*.pdf
+   (Stage 1)         (only parameters cross)            (Stage 2)
 ```
 
-A full run of the federated notebook from a cold state takes thirty to
-sixty minutes (dominated by the multi-round convolutional methods). The
-notebook checks for cached results CSVs and skips the heavy computation
-if they are present, so reading the results / re-rendering the figures
-takes seconds. Delete the corresponding files in `results/` to force a
-re-run.
+## Treatment provenance (transitive closure)
 
+`received_active_treatment` is **not** taken from a free-text column. It is
+derived by transitive closure over the ImmPort arm files in `data/arms/`:
+subject → arm (`*_arm_2_subject.txt`) → treatment, where the control arm is
+identified by name (placebo / control) and the treatment arm is the active-drug
+arm. This corrected a real error: SDY569's extended data coded arms as `1`/`2`,
+which the naive `=="hOKT3"` rule mapped to **all-untreated**; the closure
+recovers its 6 treated / 4 control split. SDY1737 has only age-group arms
+(Adult/Pediatric) and so has no determinable treatment.
 
-## License
+## Key results
 
-See [LICENSE](LICENSE).
+**A-priori power — what effect is detectable as institutions federate** (the
+honest power framing; we do *not* report post-hoc power from observed R²):
+
+![a-priori power vs N](figures/apriori_power_vs_N.png)
+
+**LASSO feature selection (federated, Panel B excl. SDY1737)** keeps four
+features — weight_kg, GAD65 (negative: more autoantibody → less C-peptide),
+received_active_treatment, Sex:
+
+![LASSO aggregation Panel B](figures/federated_lasso_coef_panelB.png)
+
+**Federation from a single institution's view** — the small institution
+(SDY569, N=10) borrowing the larger study's coefficients. Note the wide
+confidence interval: this is a *transfer* result on few subjects, not a
+within-institution power gain:
+
+![Ridge SDY569 federated](figures/Ridge_SDY569_federated.png)
+
+## Reproducing
+
+```bash
+conda env create -f environment.yml
+conda activate oadr-autoantibody
+jupyter lab
+```
+
+Run order: Stage-1 per-study notebooks first (they write `vectors/` and
+`models/`), then the Stage-2 `*_federated_w_SDY_coefficients` notebooks (they
+read those artifacts and write `figures/`). All notebooks are generated
+deterministically by the scripts in `bin/notebook_builders/` (fixed seed 42).
+
+## Notebook map
+
+| Notebook(s) | Role |
+|---|---|
+| `Ridge_/Lasso_/RandomForest_SDY{524,569,797,1737}` | Stage 1 — per-institution fit, write artifacts |
+| `Federated_Lasso` | federated LASSO + ADMM, feature selection |
+| `{LASSO,Ridge,RandomForest}_SDY{524,569}_federated_w_SDY_coefficients` | Stage 2 — apply partners' artifacts, presentation graphics |
+| `Apply_Coefficients_SDY{797,1737}` | reduced-feature analysis for the studies that cannot fully join |
+| `Predicting_Residual_Beta-cell_function` | k-axis sweep across all methods (backup) |
+| `c-peptide_baseline_to_tidy` | data preparation |
+
+Superseded / exploratory notebooks are in `archive/ipynb/`.
+
+## Limitations
+
+These are real and material; a reviewer should see them stated plainly.
+
+1. **`weight_kg` is a body-size / age confound, not beta-cell biology.** It is
+   the dominant feature (coefficient ≈ +0.97) and correlates with C-peptide AUC
+   at r = 0.67–0.93 — as do height and age. **C-peptide AUC is the standard
+   AUC-mean concentration and is *not* body-size normalized** (the ImmPort
+   ADCPEP files record weight as a separate column). Age-at-onset is the
+   best-known predictor of residual C-peptide, and weight/height proxy it in
+   pediatric cohorts. So the extended panel's predictive power comes from
+   demographics, not the autoantibody profile — and this is why the model fails
+   to transfer to SDY1737 (where weight r ≈ 0). The SDY1737 weights were
+   cross-checked against the authentic ImmPort PHEXMSTR physical-exam file and
+   match exactly, so its null weight–C-peptide relationship is a genuine
+   population difference, not a data error.
+
+2. **No post-hoc power.** Computing "achieved power" from an observed R² is
+   circular and was removed. Power is reported only a-priori (detectable effect
+   vs N, above).
+
+3. **Small N — wide confidence intervals.** SDY569 has 10 subjects and 4
+   predictors; its federated R² point estimate of ~0.50 carries a 95% bootstrap
+   CI of roughly [−0.2, +0.8]. Read the interval, not the point.
+
+4. **"Federation gain" is transfer, not power.** With only a small institution's
+   own subjects to score on, the federated number shows the *larger* study's
+   model fitting the *smaller* study — not that more N raised power within the
+   small institution.
+
+5. **`received_active_treatment` conflates different drugs** (anti-CD3 hOKT3 /
+   teplizumab vs anti-CD2 alefacept) as one binary. Valid for the SDY524+SDY569
+   pair (both anti-CD3); a simplification if generalised.
+
+6. **Researcher degrees of freedom.** The L1 penalty (α = 0.008) and the cohort
+   (excluding SDY1737) were chosen after observing they work; some optimism is
+   baked in. No external validation cohort exists.
+
+7. **Assay heterogeneity.** SDY797's autoantibodies are binary (positive/
+   negative) rather than continuous titres, and GAD65's sign differs across
+   studies — both limit clean coefficient transfer.
+
+## Layout
+
+```
+src/oadr_data.py             shared loader (per-study quirks, panels, treatment closure)
+data/arms/                   ImmPort arm files for treatment provenance
+ipynb/                       active notebooks
+archive/ipynb/               superseded notebooks
+bin/notebook_builders/       deterministic notebook generators
+vectors/ , models/           Stage-1 artifacts (only parameters)
+figures/ , results/          Stage-2 outputs
+slides/                      BioITWorld 2026 deck (v9 PDF) + SLIDES.md rendering
+environment.yml              conda environment
+```
