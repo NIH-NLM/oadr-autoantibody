@@ -120,7 +120,7 @@ Superseded / exploratory notebooks are in `archive/ipynb/`.
 
 ## Limitations
 
-These are real and material; a reviewer should see them stated plainly.
+These are real and material.
 
 1. **`weight_kg` is a body-size / age confound, not beta-cell biology.** It is
    the dominant feature (coefficient ≈ +0.97) and correlates with C-peptide AUC
